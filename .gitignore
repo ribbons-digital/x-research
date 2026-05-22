@@ -1,0 +1,23 @@
+# Python caches
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS files
+.DS_Store
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# Local outputs
+*.log
