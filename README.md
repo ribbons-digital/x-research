@@ -148,7 +148,20 @@ Notes:
 
 ### Codex CLI
 
-Codex does not need Hermes skill installation. Use this repo as a standalone tool repo:
+Codex can load this repo as a **skill** (appears in `/command`) or use it standalone.
+
+#### As a Codex skill
+
+Place the repo (or a symlink) under `~/.codex/skills/`:
+
+```bash
+mkdir -p ~/.codex/skills
+ln -s ~/Desktop/x-research ~/.codex/skills/x-research
+```
+
+After restarting Codex, the skill appears in `/command` and Codex can invoke it naturally when the task matches.
+
+#### As a standalone tool repo
 
 ```bash
 git clone <repo-url>
@@ -168,9 +181,29 @@ To make it available inside another Codex workspace, use one of these:
 - add it as a git submodule
 - symlink the folder into the workspace
 
-### Claude Code / OpenCode / other shell-first harnesses
+### Claude Code
 
-Same model as Codex: no special skill registration required.
+Claude Code can load this as a **skill** (auto-invoked via natural language) or use it standalone.
+
+#### As a Claude Code skill
+
+Place the repo (or a symlink) under `~/.claude/skills/`:
+
+```bash
+mkdir -p ~/.claude/skills
+ln -s ~/Desktop/x-research ~/.claude/skills/x-research
+```
+
+Claude Code reads markdown guides in `.claude/skills/` and auto-invokes them when the task matches. The repo's `SKILL.md` serves as the skill guide.
+
+For project-local use instead of global:
+
+```bash
+mkdir -p .claude/skills
+ln -s ~/Desktop/x-research .claude/skills/x-research
+```
+
+#### As a standalone tool repo
 
 ```bash
 git clone <repo-url>
